@@ -1,0 +1,117 @@
+project:
+  type: website
+  output-dir: docs      # use docs/ for githubpages, other cases use _site/
+  render:
+#    - "*.{qmd,R,py}"
+    - "*.qmd"           # render all *.qmd files
+    - "!site/this_dir/" # don't render a directory
+    
+    #- "!call_scripts/" # don't render a directory
+  #pre-render: Rscript prerender.R #load_libraries.R
+  # after rendering completes, script that removes .R files from the docs/ folder.
+  post-render: Rscript cleanup/clean_docs_dir.R
+
+  #resources:
+  #  - "webr-serviceworker.js"
+  #  - "webr-worker.js"
+  
+  #resources:
+  #  - figs/    # ensures that the .R files in figs/ are rendered in a website build
+  
+  # settings for previewing the website
+  preview:
+    port: 167
+    browser: true
+    navigate: true
+
+website:
+  title: "Website Title" 
+  
+  # site-url: ""
+  # add optional favicon 
+  # favicon: "website_files/images/myfavicon.png"
+
+  # add optional page footer
+  page-footer:
+    # not necessary
+    center: |
+      [contact me](myemail@mydomain.com)
+    
+    # not necessary
+    left: | 
+      made with [Quarto](https://quarto.org)
+      
+    # not necessary
+    right: |
+      [GitHub Repo](https://github.com/username/repositoryname)
+
+    # add optional background for footer
+    background: "black"
+  # add optional logo
+  # logo: "website_files/images/logo.png"  # path to your logo image
+  
+
+  # add webpage description
+  description: ""
+
+  navbar:
+    left:
+      # the index file
+      - text: "Index Page Text" # use empty string to be blank
+        href: index.qmd
+
+      # adding another page
+      - text: "First Page Text" 
+        href: pages/my_first_page.qmd  # use a meaningful name 
+
+      # adding a tab with dropdown menu
+      - text: "Drop Tab Text"
+        menu:
+          - text: "Text for first option"
+            href: pages/my_second_page.qmd 
+          - text: "Text for second option"
+            href: pages/my_third_page.qmd  
+          - text: "Exercise Test Page"
+            href: pages/team_test_page.qmd  
+
+      # the about file
+      - text: "About Page Text"
+        href: about.qmd
+       
+    right:
+      - about.qmd     # to have about page here instead 
+      
+      # not necessary
+      - icon: github
+        href: https://github.com/username   # omit for multiple users
+        
+      # not necessary
+      #- text: "@myxhandle"
+      #  href: https://x.com/myxhandle
+      #  aria-label: X (formerly Twitter)
+
+format:
+  html:
+    # base case approach
+    theme: cosmo   # cosmo is the default, alternatively call the .scss file, [styles/custom.scss]
+    #theme: darkly  # or if you have .scss, call it [cosmo, styles/custom.scss]
+    #code-link: true
+    #code-fold: true
+    #code-tools: true
+
+    toc: true
+    #page-layout: full
+    # add option for other fonts
+    include-in-header: "fonts/fontawesome.html"
+    #mainfont: arial #Nunito
+    #fontsize: 1.1rem # 1.2rem
+
+
+# for branding
+brand:
+  light: brand/light.yml
+  dark: brand/dark.yml
+
+# set quarto optional editor preference: source or visual
+#editor: source
+

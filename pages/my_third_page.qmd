@@ -1,0 +1,26 @@
+---
+title: "Page example"
+format:
+  html:
+    toc: true
+    #toc-location: left
+    toc-depth: 4          # or higher, depending on how deep your headings go
+    toc-collapse: false   # keep all expanded by default
+    number-sections: false
+    code-tools: false
+    fig-align: center
+
+execute:
+  #enabled: false
+  freeze: auto
+---
+
+
+# Overview
+
+Text here ...
+
+
+
+
+

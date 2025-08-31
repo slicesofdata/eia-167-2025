@@ -1,0 +1,15 @@
+---
+title: "About Website Title"
+format: html
+
+execute:
+  #enabled: false
+  freeze: auto
+---
+
+
+**This site** ... 
+
+Some [about page tips](https://www.orbitmedia.com/blog/about-page-best-practices-examples/) are also available.
+
+

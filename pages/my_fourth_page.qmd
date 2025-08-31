@@ -1,0 +1,61 @@
+---
+title: "Page example"
+#page-layout: article
+format:
+  html:
+    toc: true
+    #toc-location: left
+    toc-depth: 4          # or higher, depending on how deep your headings go
+    toc-collapse: false   # keep all expanded by default
+    number-sections: false
+    code-tools: false
+    fig-align: center
+
+execute:
+  #enabled: false
+  freeze: auto
+---
+
+
+
+```{r}
+# do not display the code on your website
+
+# read and clean the data
+#source( <-- data cleaning path and file name -->)
+
+# read cleaned and plot data
+#source( <-- data plotting file name -->)
+```
+
+
+# Overview (Level #1)
+
+Text here ...
+
+
+## Sub-Section (Level #2)
+
+### Our Plot! (Level #3)
+
+The plot may feel stretched. If this is the case, you will want to determine good plot-saving settings for a website. 
+
+For example, controlling the plot saving parameter argument of `ggplot::sggsave()` using `units = "px"` (pixels) and specifying the width (in pixels) and height (in pixels) may be a good approach. You can determine what pixel dimensions would be good for a webpage by doing and Internet search. 
+
+Example:
+
+- `width    = 1600`
+- `height   = 1100`
+- `units    = "px"`
+- `dpi      = 200` `# or "retina"`
+
+
+![](../figs/cty_hwy_mpg_point.png)
+
+### Plot with `width` configurations
+
+![](../figs/cty_hwy_mpg_point.png){width=800}
+
+### Our Plot with `width` configurations
+
+![](../figs/cty_hwy_mpg_point.png){width=500}
