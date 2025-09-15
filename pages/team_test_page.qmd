@@ -1,33 +1,27 @@
 ---
 title: "Page example"
-#page-layout: article
 format:
   html:
     toc: true
-    #toc-location: left
-    toc-depth: 4          # or higher, depending on how deep your headings go
-    toc-collapse: false   # keep all expanded by default
+    toc-depth: 4
+    toc-collapse: false
     number-sections: false
     code-tools: false
     fig-align: center
-
 execute:
-  #enabled: false
   freeze: auto
 ---
 
-
-
 ```{r}
-# do not display the code block on your website. 
-# to disable, select the 'show nothing run code' option from the gear set of options 
-
-# read and clean the data
-#source( <-- data cleaning path and file name -->)
-
-# read cleaned and plot data
-#source( <-- data plotting file name -->)
+install.packages("here")
+library(here)
+source(file = here::here("src", "data", "clean_mpg_data.R"))
+source(file = here::here("src", "figs", "plot_cty_hwy_mpg_point.R"))
 ```
+
+![Most recent plot](../figs/cty_hwy_mpg_point.png)
+
+
 
 
 # Overview (Level #1)
@@ -56,6 +50,7 @@ Example:
 -->
 
 ![some caption](../figs/cty_hwy_mpg_point.png)
+
 
 ### Plot with `width` configurations
 
