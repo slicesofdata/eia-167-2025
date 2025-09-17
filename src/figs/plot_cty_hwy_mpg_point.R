@@ -1,7 +1,7 @@
 ################################################################################
 # Script Name: plot_cty_hwy_mpg_point.R
-# Author: slicesofdata
-# GitHub: slicesofdata
+# =Author: Adam Guggenheim
+# GitHub: adamaguggenheim
 # Date Created:
 #
 # Purpose: This script will: 
@@ -20,6 +20,8 @@
 ################################################################################
 # Load necessary libraries/source any function directories
 library(ggplot2)
+library(quarto)
+
 
 # source a plot saving function script for file uniformity 
 # source a plot theme
@@ -27,7 +29,7 @@ library(ggplot2)
 
 ################################################################################
 # read the cleaned data cleaned_mpg.Rds in data/processed 
-cleaned_mpg <- readRDS( <-- path and file name ))
+cleaned_mpg <- readRDS(here::here("data", "processed", "cleaned_mpg.Rds"))
 
 
 ################################################################################
@@ -36,18 +38,22 @@ cty_hwy_point_plot <-
   cleaned_mpg |>
   ggplot(mapping = aes(x = cty, y = hwy)) +
   geom_point()
+cty_hwy_point_plot
 
 
 ################################################################################
 # save the plot as cty_hwy_mpg_point.png to figs/
-ggsave(filename = <-- path to + file name -->, 
+ggsave(filename = "figs/cty_hwy_mpg_point.png", 
        plot = cty_hwy_point_plot,
        units = "in",
        #width = , 
        #height = , 
        dpi = "retina",
-       create.dir = TRUE
-)
+       create.dir = TRUE)
+
+here::here()
+fs::file_exists(here::here("src","figs","plot_cty_hwy_mpg_point.R"))
+
 
 
 ################################################################################
