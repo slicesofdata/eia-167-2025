@@ -1,0 +1,40 @@
+---
+title: "Virginia Electricity Overview"
+editor: visual
+---
+
+# Virginia Electricity Trends
+
+This page gives an overview of Virginia's trends in electricity usage and customers by sector.
+
+
+## Background: Virginia Energy Context
+
+Virginia is an interesting state to examine electricity for a couple of reasons:
+
+-   Unlike fully deregulated states like Texas, Virginia operates under a regulated monopoly model, which means prices reflect both market factors and policy decisions
+
+-   Virginia, through the Virginia Clean Economy Act, is shifting from fossil fuels towards renewables. This change can be examined through looking at changes in fuel input mixes.
+
+-   Northern Virginia is the largest data center market in the world, constituting 13 percent of all reported data center operational capacity globally and 25 percent of capacity in the Americas. Demand growth caused by data centers is pressuring new capacity planning and transmission upgrades, which may affect prices for industrial as well as residential customers through increased system-wide costs.
+
+
+## Energy by Sector
+
+This visualization shows differences in energy usage across sectors in Virginia between 2001 and 2025.
+
+![Energy by Sector](../figs/va_energy_by_sector.png)
+
+## Changes in Natural Gas Prices
+
+This visualization shows changes in natural gas prices by sector in Virginia between 2001 and 2025.
+
+
+![Energy by Sector](../figs/va_changes_in_ng_price_2.png)
+
+## Energy Savings by Sector 
+
+This visualization shows changes in energy savings by sector in Virginia between 2013 and 2019.
+
+
+![Energy by Sector](../figs/energy_savings_va_plot.png)
