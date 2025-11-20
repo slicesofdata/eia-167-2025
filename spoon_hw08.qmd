@@ -1,0 +1,40 @@
+---
+title: "Sylvana Poon"
+---
+
+# Assembling your Elements 
+
+You will ensure that your data and plotting scripts needed for creating your plot are used to build the up-to-date version of the plot.
+
+## Code Block for Sourcing Your Scripts
+
+```{r}
+# source data-related scripts 
+source(here("src", "data", "sp_virginia_data_cleaning.R"))
+
+# source plotting script(s)
+source(here("src", "figs", "virginia_electricity_savings.R"))
+```
+
+## The Modified Plot
+
+I changed the plot by renaming the title for the legend from "sectorName", which is the name of the variable in the saved table to "Sector", because this name is cleaner.
+
+I also changed the ordering of the sectors so that the sector with the highest average energy savings would be ordered first and then the rest would be plotted in descending order. I did this so there would be a logic to the ordering of bars and I did this using forcats::fct_reorder().
+
+I chose not to include text or annotation because there wasn't a specific part of the plot I wanted to draw attention to.
+
+
+
+## Code Block for Embedding your PNG
+
+```{r}
+# VA Enery Savings
+
+#| fig.cap: "Energy Savings in Virginia (broken down by sector) (2013 - 2019)"
+#| fig.align: "center" # to center plot on page if desired
+#| out.width: "100%"   # or some other % appropriate for you site
+
+knitr::include_graphics(here::here("figs", "energy_savings_va_plot.png"))
+```
+
