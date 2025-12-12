@@ -1,0 +1,54 @@
+---
+title: "HW 8 and 9. Comparing Midterm Plot To Final Plot"
+author: "Adam Guggenheim"
+format:
+  html:
+    theme:
+      light: cosmo
+      dark: darkly
+    toc: true
+    toc-depth: 2
+    number-sections: true
+    embed-resources: true
+
+execute:
+  echo: false
+  warning: false
+  message: false
+---
+
+
+```{r}
+#| label: setup
+#| include: false
+
+library(eia)
+library(dplyr)
+library(ggplot2)
+library(scales)
+library(knitr)
+
+EIA_KEY <- Sys.getenv("EIA_KEY")
+if (EIA_KEY != "") eia_set_key(EIA_KEY)
+```
+
+## Comparing My Midterm Barplot to my Updated Final Line Plot
+
+- comparing them under the two plots
+
+```{r}
+#| label: fig-midterm-bar
+#| fig-cap: "Midterm version (grouped bar chart). This design was less effective for long time series, so the final uses line plots to emphasize trends."
+
+knitr::include_graphics("figs/fig_midterm_bar.png")
+```
+
+```{r}
+#| label: fig-sector-line
+#| fig-cap: "U.S. average electricity prices by sector (2001–2024). Shaded regions mark the 2008–2009 financial crisis and the COVID-19 period."
+
+knitr::include_graphics("figs/fig_sector_prices.png")
+```
+
+
+For the midterm I made my U.S. Electricity Prices By Sector (2001-2024) a Bar Plot. We were supposed to have two different types of visualizations to demonstrate our understanding for the midterm, but the bar plot was not the best choice here. The bar plot conveyed the same trends, but it was messy with having three bars for each year. Additionally, having a line plot is a much better way to visualize trends over time. For my final plot I also cleaned up my key and added shape markers just in case this plot was in gray, you could still identify and understand what is going on. I also shaded two key time stamps (Finacial Crisis and Covid-19). I did this because these were two extremely significant time points in our recent history and it was interesting to see how the prices by sector reflected that. Overall, my final plot is much cleaner, conveys more, and I believe it is the correct plot to present this information.
