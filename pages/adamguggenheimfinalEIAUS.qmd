@@ -1,0 +1,86 @@
+---
+title: "U.S. Electricity Overview"
+author: "Adam Guggenheim"
+
+format:
+  html:
+    theme:
+      light: cosmo
+      dark: darkly
+    toc: true
+    toc-depth: 2
+    number-sections: true
+    embed-resources: true
+
+execute:
+  echo: false
+  warning: false
+  message: false
+---
+
+
+
+```{r}
+#| label: setup
+#| include: false
+
+library(eia)
+library(dplyr)
+library(ggplot2)
+library(scales)
+library(knitr)
+
+EIA_KEY <- Sys.getenv("EIA_KEY")
+if (EIA_KEY != "") eia_set_key(EIA_KEY)
+
+```
+
+
+# United States Electricity Trends
+
+This part focuses on the U.S electricity prices because the United States gives us a long, well documented, and consistent data set across the sectors. It makes it an ideal baseline to compare the other states to for analyzing national/state trends, and understanding how energy costs have changed over time.
+
+## Original Midterm Bar on U.S. Average Electricity Prices By Sector
+```{r}
+#| label: fig-midterm-bar
+#| fig-cap: "Midterm version (grouped bar chart). This design was less effective for long time series, so the final uses line plots to emphasize trends."
+
+knitr::include_graphics("../figs/fig_midterm_bar.png")
+```
+
+This is my midterm plot that shows U.S. electricity prices by sector from 2001 to 2024. The x-axis represents the year and the y-axis shows the average price in cents per kilowatt-hour. Each year plotted has three bars that represent residential, commercial, and industrial electricity prices. The results produced show that residential electricity is always the most expensive, commercial prices are lower, and industrial prices are consistently the lowest. Each of these sectors show a clear increase in prices over time, including prices rising more sharply after 2020. This plot’s limitation is that it becomes visually crowded when we are looking at many years. This makes it harder to quickly and easily see overall trends or small year to year changes, and using annual averages hides seasonal fluctuations (we can infer that results  could look different in winter vs. summer). My main goal when creating this plot was to show how prices change over time. Therefore, I switched to a line plot for my final plot for this visualization. The line plot makes trends, differences between sectors, and changes over time easier to see and interpret.
+
+
+
+## The Modified U.S. Average Electricity Prices By Sector Plot
+
+
+```{r}
+#| label: fig-sector-line
+#| fig-cap: "U.S. average electricity prices by sector (2001–2024). Shaded regions mark the 2008–2009 financial crisis and the COVID-19 period."
+
+knitr::include_graphics("../figs/fig_sector_prices.png")
+```
+
+This plot presents U.S. average electricity prices by sector: residential, commercial, and industrial, from 2001 to 2024 using a line plot with points. This plot is a modification of one of my original midterm visualizations, which originally was showing the same data but as a bar plot. Switching my final plot to a line plot was better because it emphasizes trends and changes over time. This makes the visual easier for the audience to compare how prices evolve across the sectors instead of just focusing on individual yearly values. My data in this code is being pulled from the EIA API. It was cleaned using mutate() and filter() to create readable sector labels and remove missing values. Additionally, it was then visualized with geom_line() and geom_point(). There are manual colors and shape scales to clearly distinguish sectors. The shaded regions which were added using annotate(), are highlighting major economic periods, like the 2008–2009 financial crisis and the COVID-19 pandemic. This provides important contextual information. A key advantage of this approach is that it clearly shows long run trends and relative differences between sectors. One of the possible limitations from this plot is that annual line plots can create uncertainty over short term variation and may look like smooth continuity even though prices are measured discretely year by year. Overall, the results of this plot show that electricity prices have increased across all sectors over time.  Residential prices are consistently the highest, industrial prices the lowest, and a noticeable acceleration in growth after 2020. It is also important to note that there were changes during the 2008–2009 financial crisis and a more obvious increase (seen in the plot) from the COVID-19 pandemic. This was extremely noticeable in  residential and commercial users.
+
+## Percent Change In U.S. Electricity Prices By Sector
+```{r}
+#| label: fig-percent-change
+#| fig-cap: "Percent change in U.S. electricity prices by sector relative to the 2001 baseline (2001 = 0%)."
+
+knitr::include_graphics("../figs/fig_percent_change.png")
+```
+
+This line chart illustrates the percent change in average U.S. electricity prices by sector, residential, commercial, and industrial, from 2001 to 2024, with 2001 normalized to zero on the y-axis. The x axis like the other plots is representing years, while the y-axis here shows the percentage change in prices relative to the 2001 baseline. Each point corresponds to a sector’s average annual electricity price in a given year, and the connected lines highlight long term trends. Looking across all sectors, electricity prices rise substantially, the main finding is that the trends move apart over time. Residential prices increase the most, especially after 2020, reaching nearly 90% above 2001 levels by 2024, while commercial and industrial prices grow more gradually and remain closer together at roughly 55–65% above the baseline. Some of the patterns we can see include steady growth through the 2000s, a relative flatness across much of the mid 2010s, and then a sharp acceleration in the early 2020s seen primarily by residential prices. A key takeaway is that households have experienced disproportionately larger electricity price increases compared to businesses and industry. Again, this data were retrieved using the EIA R package to pull annual U.S. retail electricity prices by sector from the EIA API, and then cleaned and reshaped with dplyr, normalized by computing sector-specific percent changes relative to 2001, and then using ggplot 2 to plot using manually defined colors, shapes, and formatted axes for clarity. A limitation to point out is that the figures reflect annual averages, which mask seasonal fluctuations and short-term volatility, and the visualization is descriptive rather than causal, showing price trends without explaining their underlying drivers.
+
+
+## Electricity price trends for the U.S., California, Texas, and Virginia
+```{r}
+#| label: fig-state-trends
+#| fig-cap: "Electricity price trends for the U.S., California, Texas, and Virginia (2001–2024) with LOESS trends, uncertainty bands, and peak labels."
+
+knitr::include_graphics("../figs/fig_state_trends.png")
+```
+
+This next final plot I have is a faceted plot that is comparing the annual average retail electricity prices (¢/kWh) from 2001 through the latest available year (2024) for the United States, California, Texas, and Virginia. Using eia_data() from the eia package, I pulled annual state-level price data, cleaned it with mutate() (extracting year, recoding state, and converting price to numeric), and then used ggplot() to layer gray points for each observed year with a colored LOESS smooth (geom_smooth(method="loess", se=TRUE, span=0.6)) which was used to highlight the overall trend and show an uncertainty band. Even though prices are annual averages, the EIA reports many observations per year across different reporting units. This is why there are several gray points that appear for each year rather than just a single value. This is when the LOESS. curve smooths over to show the overall trend and the uncertainty. This is because there are multiple prices recorded for the same year. The results of this plot show visual differences across regions. First, California increases the most and peaks around 32¢/kWh in 2024. Next, Texas remains lower and relatively flat followed by  Virginia is a steadier path closer to the national average. The peak prices are highlighted by identifying the highest value for each state and labeling it directly on the plot. One of the limitations of this plot is that the data are annual averages, which prevents us from seeing seasonal variation, and the LOESS trend only describes patterns rather than causes. This could be improved by using monthly or inflation-adjusted data and adding another variable, such as demand, to help us explain why the prices differ across states.

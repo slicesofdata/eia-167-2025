@@ -52,7 +52,7 @@ _ignore_this_dir/*
 #src/*
 
 # but keep the directory itself with an empty .gitkeep or .gitignore
-#!api/.gitkeep 
+#!api/.gitkeep
 !data/.gitkeep
 !figs/.gitkeep
 !src/.gitkeep
@@ -61,7 +61,7 @@ _ignore_this_dir/*
 
 ## image/pdf files ##
 #*.pdf
-#*.png 
+#*.png
 *.tiff
 #*.jpg
 #*.jpeg
@@ -145,3 +145,5 @@ Thumbs.db
 *.so
 
 ##############################################################################
+
+**/*.quarto_ipynb

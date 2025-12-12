@@ -22,10 +22,14 @@ Besides data center activity, we also observe a couple of key facts that make Vi
 ## Virginia Retail Electricity Prices by Sector
 
 ```{r}
+library(dplyr)
+library(tidyr)  
+library(ggplot2)
+library(scales)
+library(here)
 source(here("src","data","energy_savings_cleaning_VA.R"))
 source(here("src","figs","energy_savings_plot_VA.R"))
 ```
-
 
 ![Electricity Prices by Sector](../figs/energy_by_sector_plot_VA.png)
 
@@ -79,6 +83,7 @@ The orange line reflects normal seasonal swings – high electricity needs in th
 The pink line reflects long-term demand growth primarily driven by data center expansion in Northern Virginia and, to a lesser extent, grid electrification. This pink line also explains the trend we see in retail prices in the commercial sector in the first plot. Above, we see commercial sector prices spike after 2021, which coincides with the demand growth displayed in this plot. This is because of demand pressure on the grid as utilities must expand to meet the needs of this increased baseload.
 
 ## Seasonal Variability across all Sectors
+
 ```{r}
 source(here("src","data","prices_by_sect_cleaning_VA.R"))
 source(here("src","figs", "monthly_price_density_plot_all_sect_VA.R"))
@@ -93,6 +98,7 @@ The shape shows the range of observed prices in the month while the black dot ma
 This plot explains the importance of seasonality on month-to-month changes in retail electricity prices. Virginia displays considerable climate variability. Average prices peak slightly in the summer due to data centers displaying increased server cooling among other factors. In the winter, while there are heating needs, December to February months display slightly narrower and lower price distributions.
 
 ## Seasonal Variability by Sector
+
 ```{r}
 source(here("src","data","prices_by_sect_cleaning_VA.R"))
 source(here("src","figs", "monthly_price_density_plot_VA.R"))
@@ -107,6 +113,7 @@ We see residential customers face the largest seasonal swings and have the broad
 Comparatively, commercial and industrial customers are better buffered against seasonality, with the latter enjoying negotiated high-load contracts.
 
 ## Energy Savings by Sector
+
 ```{r}
 source(here("src","data","energy_savings_cleaning_VA.R"))
 source(here("src","figs", "energy_savings_plot_VA.R"))

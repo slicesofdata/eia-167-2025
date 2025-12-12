@@ -1,0 +1,122 @@
+---
+title: "Miles Brodey HW8"
+format:
+  html:
+    toc: true
+---
+
+```{r}
+library(here)
+library(ggplot2)
+library(dplyr)
+library(readr)
+library(tidyr)
+library(quarto)
+```
+
+## Assembling your Elements
+
+You will ensure that your data and plotting scripts needed for creating your plot are used to build the up-to-date version of the plot.
+
+## Code Block for Sourcing Your Scripts
+
+```{r}
+# source data-related scripts 
+source(here::here("data", "california_chp_data_cleaning.R"))
+```
+
+```{r}
+# source plotting script
+chp_plot <- ggplot(generation_long, aes(x = year, y = generation)) +
+geom_col(
+aes(fill = sector),
+position = position_dodge(width = 0.6),
+width = 0.6
+) +
+scale_x_reverse(
+breaks = unique(generation_long$year),
+expand = expansion(mult = c(0.07, 0.07))
+) +
+scale_y_continuous(
+limits = c(0, 18e6),
+breaks = seq(0, 18e6, by = 2e6),
+labels = scales::label_number(scale = 1e-6, accuracy = 1),
+expand = c(0, 0),
+name = "Net Generation (million MWh)"
+) +
+scale_fill_manual(
+values = c("commercial" = "#F8766D", "industrial" = "#00BA38"),
+labels = c("Commercial", "Industrial")
+) +
+geom_smooth(
+aes(color = sector, group = sector),
+method = "loess", se = FALSE, size = 1,
+show.legend = FALSE
+) +
+geom_vline(xintercept = peak_year, linetype = "dashed", color = "gray40") +
+annotate(
+"text",
+x = peak_year - -1.1 ,
+y = max(generation_total$total_gen) * .89,
+label = paste0("Highest Combined\nCHP: ", peak_year),
+color = "gray40",
+fontface = "italic",
+size = 3.8,
+hjust = 0
+) +
+labs(
+title = "California Combined Heat & Power (CHP) Net Generation by Sector",
+subtitle = "Industrial CHP generation consistently diminishes over time period",
+caption = "Source: U.S. Energy Information Administration (EIA)",
+x = "Year",
+y = "Net Generation (MWh)",
+fill = "Sector"
+) +
+coord_flip(clip = "off") +
+theme_minimal(base_size = 13) +
+theme(
+  plot.title = element_text(hjust = 0.5, face = "bold"),
+    plot.subtitle = element_text(hjust = 0.5),
+    plot.margin = margin(15, 100, 15, 15),
+    legend.position = "bottom",
+    legend.title = element_text(face = "bold"),
+    axis.text.x = element_text(angle = 45, hjust = 1),
+    panel.grid.major.x = element_line(color = "gray80", linewidth = 0.4),
+    panel.grid.minor.x = element_blank(),
+    axis.ticks.x = element_line(color = "gray80", linewidth = 0.5),
+    axis.title.x = element_text(size = 13),
+    axis.title.y = element_text(size = 13)
+)
+
+ggsave(
+  filename = here::here("figs", "ca_chp_plot_final.png"),
+  plot = chp_plot,
+  width = 11,
+  height = 7,
+  dpi = 300,
+  bg = "white",
+  device = "png"
+)
+```
+
+------------------------------------------------------------------------
+
+## The Modified Plot
+
+The biggest change that I made to this plot was flipping the coordinates in order to make the graph more understandable. I was debating to make this change or just add numeric labels on the bars, but I decided to flip the coordinates because of the clutter that would come from labeling so many bars. I then made the x-axis with net generation increase by increments of 2 instead of increments of 5. I also added tick marks to make the bars values more comprehendible. When I flipped the x- and y-axis, the years on the y-axis were very clumped together, so I utilized expand within the scale_x_reverse function in order to add padding on top and below each year. I then used position_dodge to group the bars for each year closer together. I finally added LOESS curves to show how CHP generation has changed year to year, and I added a label on the plot for the year with the largest combined (industrial and commercial) CHP generation. Overall, I think that this new plot is much easier to comprehend, and has some additional elements that add depth to the plot without overstimulating the viewer with excess information.
+
+------------------------------------------------------------------------
+
+## Code Block for Embedding your PNG
+
+```{r}
+# plot with a caption
+
+#| fig.cap: "California CHP Net Generation by Sector"
+#| fig.align: "center" # to center plot on page if desired
+#| out.width: "100%"   # or some other % appropriate for you site
+
+knitr::include_graphics(here::here("figs", "ca_chp_plot_final.png"))
+```
+
+\

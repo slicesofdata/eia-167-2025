@@ -1,15 +1,73 @@
 ---
-title: "About Website Title"
-format: html
-
-execute:
-  #enabled: false
-  freeze: auto
+title: "About This Project"
+format:
+  html:
+    toc: false
+    number-sections: false
+    fig-align: center
+    embed-resources: true
 ---
 
+# About This Project
 
-**This site** ... 
+This project explores **electricity trends across the United States** and in three specific states — **California, Texas, and Virginia**. Electricity data plays a critical role in understanding how energy policy, infrastructure investments, and consumer behavior affect price, consumption, carbon emissions, and utility customers over time.
 
-Some [about page tips](https://www.orbitmedia.com/blog/about-page-best-practices-examples/) are also available.
+By examining retail prices, customer accounts, CO₂ emissions, and energy generation patterns, this project provides a **comprehensive overview of the U.S. energy landscape** and highlights both broad national patterns and unique state-level dynamics.
+
+---
+
+## Why This Project Matters
+
+Electricity is essential for modern life, powering homes, businesses, and critical infrastructure. With rising concerns about sustainability, energy equity, and grid resilience, understanding how electricity systems evolve is more important than ever.
+
+This project:
+- Shows how **electricity prices vary by sector and by state**  
+- Reveals **changes in electricity customer accounts** over time  
+- Highlights state-level **trends in CO₂ emissions and energy use**
+- Allows comparison between national and state patterns to inform policy and planning
+
+These insights can be useful for:
+- Energy researchers and analysts  
+- Policy makers and regulators  
+- Students and educators studying energy systems  
+- Anyone interested in the dynamics of U.S. electricity markets
+
+---
+
+## About the Author
+
+**Miles Brodey** (or *your preferred name*) is an energy data analyst and student in **EIA-167 (Data Visualization and Storytelling in R/Quarto)**. This work reflects an integration of data analysis, visualization, and storytelling to better understand long-term trends in the electricity sector.
+
+Committed to using data for public good, Miles seeks to make complex energy data accessible and digestible through clear, interactive visuals and narratives.
+
+---
+
+## How This Site Is Built
+
+This website was created using:
+
+- **Quarto** — a modern publishing system for reproducible documents  
+- **R** (tidyverse, ggplot2, here, dplyr, tidyr) — for data cleaning & visualization  
+- **EIA API Data** — energy data sourced directly from the U.S. Energy Information Administration  
+- A modular file structure to keep data, code, and outputs organized
+
+The source code and data are publicly available on **GitHub**:  
+[https://github.com/slicesofdata/eia-167-2025](https://github.com/slicesofdata/eia-167-2025)
+
+---
+
+## Contact
+
+If you have questions, feedback, or suggestions for future work, feel free to connect:
+
+- 📧 Email: **your_email@example.com**  
+- 🐦 Twitter/X: **@yourhandle**  
+- 💼 LinkedIn: **yourprofile**  
+- 🧠 GitHub: [slicesofdata/eia-167-2025](https://github.com/slicesofdata/eia-167-2025)
+
+---
+
+Thank you for exploring this project!
+
 
 

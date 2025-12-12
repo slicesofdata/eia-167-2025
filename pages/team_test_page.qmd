@@ -13,7 +13,6 @@ execute:
 ---
 
 ```{r}
-install.packages("here")
 library(here)
 source(file = here::here("src", "data", "clean_mpg_data.R"))
 source(file = here::here("src", "figs", "plot_cty_hwy_mpg_point.R"))
