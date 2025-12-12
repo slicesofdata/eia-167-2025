@@ -1,0 +1,34 @@
+# Adam Guggenheim
+
+---
+title: "United States Electricity Overview"
+editor: visual
+---
+
+# Limitations of my original visualization:
+
+-   Doesn’t show monthly or within-year price fluctuations (hard to see what things are switching in what month and why, is there more fluctuations in winter vs summer?)
+-   Color issues (isn’t color-blind safe), viewers may have a hard time with colors, also especially on gray scale
+-   Bars emphasize absolute values, not trends (so a different visualization would be better like line chart)
+-   Bars create a visual clutter when presented yearly and can make it hard to interpret what is going on due to potential messiness
+
+# ![](images/Rplot08.jpeg)Alternative Geoms:
+
+-   The main alternative geom I should have used here is “multi series line chart”
+-   My data is a time series and a line chart matches this best
+-   Line charts represent trends and slopes which would be better here (In a bar chart, you have to mentally “connect” tops of bars to see the pattern)
+-   It is cleaner and more compact (3 lines vs. 3 bars for each year I am looking at)
+-   Additionally, I can do 3 separate colors for each line, but I can also put different shapes on each line to make visualizations easier to understand even on gray scale
+
+# Decorative and Design Elements:
+
+-   I would keep my title the same but would add another line saying data from EIA
+-   Switch colors so it can be interpreted easily on gray scale
+-   Switch to line graph and add different shape points on lines
+-   I would keep the legend the same
+-   I would keep my light grid lines
+-   Find a way to add annotations into plot especially for spike in trend around 2021-24
+
+How does it connect to the readings from class:
+
+What I am discussing above connects to the Shah and Carpenter reading. They found that people often misinterpret line graphs when they are cluttered and are missing labels. The research they conducted shows that viewers can struggle to accurately translate visual slopes and axes into conceptually understanding the material. By adding titles distinct colors, point markers, if I switch my graph to a line plot it can address these limitations, and help viewers easily follow each sectors trend over time. It will also accurately interpret how their prices may diverge or converge across the years I am looking at.

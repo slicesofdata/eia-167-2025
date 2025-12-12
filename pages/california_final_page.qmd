@@ -4,14 +4,12 @@ format:
   html:
     toc: true
     toc-depth: 3
-    toc-collapse: false
     number-sections: false
     fig-align: center
-execute:
-  freeze: auto
+    embed-resources: true
 ---
 
-# California Electricity Trends
+## California Electricity Overview
 
 This page gives an overview of California's trends in electricity usage and customers for our three selected sectors, residential, commercial, and industrial. The first plot exhibits the number of customer accounts for each sector and shows the large amount of residential customers in the state. The next plot displays combined heat and power capacity for the commercial and industrial sectors. This plot helps us understand the emphasis of energy efficiency for these two sectors. Together, these plots help paint the picture of California's electricity landscape. 
 

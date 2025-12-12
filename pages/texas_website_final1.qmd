@@ -1,0 +1,28 @@
+---
+format:
+  html:
+    toc: true
+    toc-depth: 3
+    number-sections: false
+    fig-align: center
+    embed-resources: true 
+
+---
+
+## Texas Electricity Overview
+
+Since the early 2000s, Texas has seen steady growth in electricity demand and evolving price and supply dynamics. The deregulated market (largely under Electric Reliability Council of Texas — ERCOT) has fostered competitive retail offerings and increased consumer choice.Residential electricity prices, which were relatively modest in the mid-2000s, gradually rose through the 2010s and into the early 2020s.Meanwhile, generation capacity has shifted significantly: Texas has emerged as a national leader in wind and solar power, while natural-gas and coal generation still play large roles.The state also faced important reliability tests, notably the February 2021 winter storm that led to widespread outages, prompting regulatory and infrastructure reforms. More recently, wholesale prices remain higher than many past years, demand is sharply increasing (especially driven by data-centers, cooling loads and industrial growth), and forecasts indicate these pressures may push up bills or require further investment in grid infrastructure.
+
+## Demand Side Pressures of Electricity Consumption
+
+![](src/figs/homework6 copy.png){width="80%"}
+
+This graph shows patterns in Texas’s electricity consumption across residential, commercial, and industrial sectors over time. The overall trend highlights how energy use continues to grow alongside population expansion, industrial activity, and rising digital infrastructure. These patterns point to ongoing demand-side pressures as households, businesses, and factories increasingly rely on electricity. The grid must adapt to peak loads, seasonal variability, and emerging technologies. Monitoring these trends helps identify when and where additional generation capacity, efficiency programs, or demand management strategies may be needed to sustain reliability in Texas’s evolving energy landscape
+
+## Supply side pressures on Electricity consumption
+
+![](src/figs/hw6 copy.png){width="80%"}
+
+This graph reflects Texas’s shifting energy supply landscape and the supply-side pressures that come with it. As renewable generation particularly wind and solar has rapidly expanded, coal output has declined, signaling a structural transformation in how Texas meets its growing electricity needs. While this shift supports cleaner energy goals, it also creates new supply-side challenges. Renewables are intermittent, meaning generation depends on weather conditions and requires robust storage, flexible backup generation, and transmission infrastructure to maintain stability. At the same time, the retirement of coal plants reduces the system’s traditional baseload capacity, placing pressure on grid reliability during high-demand or low-generation periods. It indicates how Texas balances expanding renewable supply with the need for consistent, dispatchable energy sources to keep pace with economic and population growth.
+
+Public policy plays a critical role in this transition.For example, tax incentives (like Production Tax Credits or the Investment Tax Credit) encourage renewable build-out, while rules around plant retirement and emissions regulations (such as for coal) accelerate shifts in generation mix. Moreover, policies promoting grid storage, flexible gas peakers, and transmission build-out will shape how well supply-side pressures are managed as this graph evolves.
