@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Site Name – Electricity Trends across the United States and Specific States</title>
+<title>Electricity Trends Across the U.S. and Select States – Electricity Trends Across the U.S. and States</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -72,6 +72,7 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
+<script src="https://kit.fontawesome.com/78ddb093ea.js" crossorigin="anonymous"></script>
 
 
 </head>
@@ -248,7 +249,7 @@ ul.task-list li input[type="checkbox"] {
     <a href="./index.html" class="navbar-brand navbar-brand-logo">
     </a>
     <a class="navbar-brand" href="./index.html">
-    <span class="navbar-title">Electricity Trends across the United States and Specific States</span>
+    <span class="navbar-title">Electricity Trends Across the U.S. and States</span>
     </a>
   </div>
             <div id="quarto-search" class="" title="Search"></div>
@@ -262,7 +263,7 @@ ul.task-list li input[type="checkbox"] {
 <span class="menu-text">United States</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./pages/california_overview_page1.html"> 
+    <a class="nav-link" href="./pages/california_final_page.html"> 
 <span class="menu-text">California</span></a>
   </li>  
   <li class="nav-item">
@@ -270,7 +271,7 @@ ul.task-list li input[type="checkbox"] {
 <span class="menu-text">Texas</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./pages/sp_eia_va_page_2.html"> 
+    <a class="nav-link" href="./pages/SP_page_VA.html"> 
 <span class="menu-text">Virginia</span></a>
   </li>  
 </ul>
@@ -281,7 +282,12 @@ ul.task-list li input[type="checkbox"] {
   </li>  
   <li class="nav-item">
     <a class="nav-link" href="./about.html"> 
-<span class="menu-text">About Website Title</span></a>
+<span class="menu-text">About</span></a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://github.com/slicesofdata/eia-167-2025"> <i class="bi bi-github" role="img">
+</i> 
+<span class="menu-text"></span></a>
   </li>  
 </ul>
           </div> <!-- /navcollapse -->
@@ -295,21 +301,13 @@ ul.task-list li input[type="checkbox"] {
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
-    <nav id="TOC" role="doc-toc" class="toc-active">
+    <nav id="TOC" role="doc-toc" class="toc-active" data-toc-expanded="99">
     <h2 id="toc-title">On this page</h2>
    
   <ul>
   <li><a href="#welcome" id="toc-welcome" class="nav-link active" data-scroll-target="#welcome">Welcome</a>
   <ul class="collapse">
   <li><a href="#about-this-site" id="toc-about-this-site" class="nav-link" data-scroll-target="#about-this-site">About This Site</a></li>
-  <li><a href="#types-of-your-data-visualization-website" id="toc-types-of-your-data-visualization-website" class="nav-link" data-scroll-target="#types-of-your-data-visualization-website">Types of your Data Visualization Website</a></li>
-  <li><a href="#coding-dos-and-donts" id="toc-coding-dos-and-donts" class="nav-link" data-scroll-target="#coding-dos-and-donts">Coding DOs and DON’Ts</a>
-  <ul class="collapse">
-  <li><a href="#do-not" id="toc-do-not" class="nav-link" data-scroll-target="#do-not">Do <em>NOT</em>:</a></li>
-  <li><a href="#please-do" id="toc-please-do" class="nav-link" data-scroll-target="#please-do">Please <strong>DO</strong>:</a></li>
-  </ul></li>
-  <li><a href="#for-building-your-website-you-will" id="toc-for-building-your-website-you-will" class="nav-link" data-scroll-target="#for-building-your-website-you-will">For building your website, you will:</a></li>
-  <li><a href="#other-useful-project-related-resources" id="toc-other-useful-project-related-resources" class="nav-link" data-scroll-target="#other-useful-project-related-resources">Other Useful Project-Related Resources</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -324,7 +322,7 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Site Name</h1>
+<h1 class="title">Electricity Trends Across the U.S. and Select States</h1>
 </div>
 
 
@@ -343,146 +341,24 @@ ul.task-list li input[type="checkbox"] {
 
 <section id="welcome" class="level1">
 <h1>Welcome</h1>
-<p>Welcome to <strong>Site Name</strong>! Blah, blah…</p>
+<p>Welcome to <strong>Electricity Trends Across the U.S. and States</strong>.<br>
+This website explores how electricity demand, pricing, and emissions evolve across the United States, with focused case studies on California, Texas, and Virginia.</p>
+<p>Using publicly available data from the U.S. Energy Information Administration (EIA), the site combines data visualizations with narrative explanations to highlight patterns in electricity consumption, sectoral differences, and regional energy challenges. The goal is to make complex energy data more accessible and meaningful for a general audience.</p>
 <section id="about-this-site" class="level2">
 <h2 class="anchored" data-anchor-id="about-this-site">About This Site</h2>
-<p>This simple site serves as the core template for building your website and is designed to communicate elements of building your plots, pages, and content for a webpage. You will build a Quarto website for a target audience to communicate data visualized in ways to communicate patterns, trends, in data or to tell a story about data. There are more advanced styling you can modify with Quarto websites but this template is a good starting point if you are unfamiliary with Quarto.</p>
-<hr>
-<!-- the 3 hyphens seen above create an optional break on the page. Dp not place where they touche other content  -->
-</section>
-<section id="types-of-your-data-visualization-website" class="level2">
-<h2 class="anchored" data-anchor-id="types-of-your-data-visualization-website">Types of your Data Visualization Website</h2>
-<ol type="1">
-<li><strong>Exploratory Data Stories</strong>
+<p>This site serves as a data visualization project designed to communicate trends and comparisons in U.S. electricity systems. Rather than presenting raw datasets or technical tables, the website utilizes clear visual storytelling to help users understand how electricity markets and energy use differ across regions and sectors.</p>
+<p>Each page focuses on a specific geographic scope:</p>
 <ul>
-<li><em>Purpose:</em> Allows visitors to interact with data to explore patterns and relationships.</li>
-<li><em>Some Characteristic:</em>
-<ul>
-<li>Guided narrative plus visualizations<br>
+<li><strong>United States</strong> — national trends in electricity use and prices<br>
 </li>
-<li>User-driven discovery (obviates raw data analysis skills)<br>
+<li><strong>California</strong> — energy efficiency, pricing pressures, and emissions<br>
 </li>
-</ul></li>
-<li>Demonstrates that you can you can clean and wrangle raw open data, but also combine storytelling and data interpretation.</li>
-</ul></li>
-<li><strong>Analytical Decision-Support Tools</strong>
-<ul>
-<li><em>Purpose:</em> Help professionals understand data and make informed choices.</li>
-<li><em>Some Characteristic:</em>
-<ul>
-<li>Multiple data metrics</li>
-<li>Provides different slices/groupings of data</li>
-</ul></li>
-<li>Demonstrates that you can clean and wrangle raw open data and can work with complex data sets that support business decisions directly.</li>
-</ul></li>
-<li><strong>Public Transparency &amp; Open Data Portals</strong>
-<ul>
-<li><em>Purpose:</em> Share government or research data in a user-friendly way for either accountability or public engagement or both.</li>
-<li><em>Some Characteristics:</em>
-<ul>
-<li>Clear, accessible visuals for non-expert audiences<br>
+<li><strong>Texas</strong> — demand growth, generation shifts, and market dynamics<br>
 </li>
-<li>Open data downloads<br>
-</li>
-<li>Trend and comparison features</li>
-</ul></li>
-<li>Demonstrates you can clean and wrangle raw open data, combine multiple data sources, and provide value to otherwise stagnant data.</li>
-</ul></li>
-</ol>
+<li><strong>Virginia</strong> — regional energy patterns and sectoral differences</li>
+</ul>
+<p>Together, these pages demonstrate how data can be cleaned, analyzed, and visualized to tell a coherent story about energy systems, policy tradeoffs, and economic impacts.</p>
 <hr>
-</section>
-<section id="coding-dos-and-donts" class="level2">
-<h2 class="anchored" data-anchor-id="coding-dos-and-donts">Coding DOs and DON’Ts</h2>
-<section id="do-not" class="level3">
-<h3 class="anchored" data-anchor-id="do-not">Do <em>NOT</em>:</h3>
-<ul>
-<li>Save files in random places (see directory structure)</li>
-<li>Hard-code paths (e.g., <code>/myusername/directory/subdirectory/file.R</code> or <code>C:/myusername/directory/subdirectory/file.R</code>)</li>
-<li>Import or process data without code</li>
-<li>Save/export plot files without code</li>
-<li>Use the R Studio Git GUI</li>
-<li>Use spaces for directory names or file names</li>
-<li>use UPPERCASE characters in directories and file names</li>
-</ul>
-</section>
-<section id="please-do" class="level3">
-<h3 class="anchored" data-anchor-id="please-do">Please <strong>DO</strong>:</h3>
-<ul>
-<li>Save files in a directory structure</li>
-<li>Reference directory and file paths using the <strong>{here}</strong> library
-<ul>
-<li>by importing files using code</li>
-<li>by saving/exporting files using code</li>
-</ul></li>
-<li>Use Git commands in the RStudio terminal</li>
-<li>Use machine-readable file paths (e.g., directory and file names)
-<ul>
-<li>by replacing spaces with _ or - (choose one)</li>
-<li>by making all characters lowercase</li>
-</ul></li>
-</ul>
-<hr>
-</section>
-</section>
-<section id="for-building-your-website-you-will" class="level2">
-<h2 class="anchored" data-anchor-id="for-building-your-website-you-will">For building your website, you will:</h2>
-<ul>
-<li><p><strong>Develop Website Content</strong></p>
-<ul>
-<li>Modify a <code>_quarto.yml</code> (<a href="https://en.wiktionary.org/wiki/YAML">YAML</a>) config file for the page structure, options, and configuration</li>
-<li>Structure Quarto <code>.qmd</code> input files for the website pages (e.g., <code>index.qmd</code>, <code>about.qmd</code>, etc.)</li>
-<li>Add text content for the input file pages</li>
-<li>Render website files using <em>Build &gt; Render Website</em> or <strong>{quarto}</strong> library; <a href="https://quarto.org/docs/websites/">See here for more details</a></li>
-<li>Push to GitHub and manage in <a href="https://docs.github.com/en/pages">GitHub Pages</a></li>
-</ul></li>
-<li><p><strong>Maintain File Organization</strong></p>
-<ul>
-<li>Organize directories and files</li>
-<li>Maintain a directory structure</li>
-</ul></li>
-<li><p><strong>Create Data File(s) and Scripts</strong></p>
-<ul>
-<li>Save data files in appropriate directory in <code>data/</code> (e.g., <code>data/raw/</code>)</li>
-<li>Write <code>.R</code> scripts for cleaning and summarizing data using <strong>{tidyverse}</strong> libraries</li>
-<li>Save data-related scripts in <code>src/data/</code> using meaningful and standardized names</li>
-<li>Save cleaned/processed data files <code>data/processed/</code></li>
-</ul></li>
-<li><p><strong>Create Plot Scripts, Functions, and Files</strong></p>
-<ul>
-<li><p><em>Scripts</em></p>
-<ul>
-<li>Write <code>.R</code> scripts for creating plots using <strong>{ggplot}</strong></li>
-<li>Save plot-related scripts in <code>src/figs/</code> using meaningful and standardized names</li>
-</ul></li>
-<li><p><em>Function Script(s)</em></p>
-<ul>
-<li>Write a function to ensure uniform saving of plots using <a href="https://ggplot2.tidyverse.org/reference/ggsave.html">ggplot2::ggsave()</a> and save function in <code>src/figs/</code> so that you can apply it systematically to format plot objects</li>
-</ul></li>
-<li><p><em>Plot Files</em></p>
-<ul>
-<li>Save plots/figures as <strong>.png</strong> files in <code>figs/</code> making sure to use unique names for each plot</li>
-<li>Link <em>.png</em> files inside webpages so they load</li>
-</ul></li>
-<li><p><em>(Optional) Customize a Website Theme</em></p>
-<ul>
-<li>Create a <code>custom.scss</code> <a href="https://sass-lang.com/">Sass file</a> to manage color schemes and save in <code>styles/</code> or create a <a href="https://quarto.org/docs/authoring/brand.html"><code>_brand.yml</code> file</a></li>
-<li>Additional <a href="https://quarto.org/docs/output-formats/html-themes-more.html">theme tips can be found here</a></li>
-</ul></li>
-</ul></li>
-</ul>
-<hr>
-</section>
-<section id="other-useful-project-related-resources" class="level2">
-<h2 class="anchored" data-anchor-id="other-useful-project-related-resources">Other Useful Project-Related Resources</h2>
-<ul>
-<li><a href="https://ggplot2.tidyverse.org/reference/">ggplot2 Reference</a></li>
-<li><a href="https://torquemag.io/2023/09/must-have-pages-website/">Tips for website pages</a> Other</li>
-<li><a href="https://quarto.org/docs/">Quarto Documentation</a></li>
-<li><a href="https://quarto.org/docs/websites/">Quarto Websites</a></li>
-<li>Theming with a <a href="https://quarto.org/docs/authoring/brand.html">_brand.yml</a>, <a href="https://quarto.org/docs/blog/posts/2025-01-15-quarto-tip-brand-positron/">example here</a></li>
-<li><a href="https://posit-dev.github.io/brand-yml/">More on Brand YML</a></li>
-<li><a href="https://quarto.org/docs/dashboards/theming.html">Other Theming</a></li>
-</ul>
 
 
 </section>
