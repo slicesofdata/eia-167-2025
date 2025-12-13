@@ -40,8 +40,22 @@ We see all sectors becoming more expensive over time due to factors we will expl
 ## Changes in Natural Gas Prices
 
 ```{r}
-source(here("src","data","changes_in_ng_prices_cleaning_VA.R"))
-source(here("src","figs","changes_in_ng_prices_plot_VA.R"))
+#| echo: false
+#| message: false
+#| warning: false
+#| results: hide
+
+suppressMessages(
+  suppressWarnings(
+    source(here("src","data","changes_in_ng_prices_cleaning_VA.R"), local = TRUE)
+  )
+)
+
+suppressMessages(
+  suppressWarnings(
+    source(here("src","figs","changes_in_ng_prices_plot_VA.R"), local = TRUE)
+  )
+)
 ```
 
 ![Natural Gas Prices by Sector](../figs/changes_in_ng_prices_plot_VA.png)
@@ -55,6 +69,9 @@ However, in some periods like between 2010 and 2016, where natural gas prices st
 ## Electricity Generation Fuel Mix
 
 ```{r}
+#| echo: false
+#| message: false
+#| warning: false
 source(here("src","data","fuel_mix_gen_cleaning_VA.R"))
 source(here("src","figs", "fuel_mix_plot_VA.R"))
 ```
@@ -70,6 +87,9 @@ We also see evidence of the VCEA at play. From 2020 onwards, renewables (hydroel
 ## Commercial Sector Electricity Sales
 
 ```{r}
+#| echo: false
+#| message: false
+#| warning: false
 source(here("src","data","data_center_cleaning_VA.R"))
 source(here("src","figs", "data_center_plot_VA.R"))
 ```
@@ -85,6 +105,9 @@ The pink line reflects long-term demand growth primarily driven by data center e
 ## Seasonal Variability across all Sectors
 
 ```{r}
+#| echo: false
+#| message: false
+#| warning: false
 source(here("src","data","prices_by_sect_cleaning_VA.R"))
 source(here("src","figs", "monthly_price_density_plot_all_sect_VA.R"))
 ```
@@ -100,6 +123,9 @@ This plot explains the importance of seasonality on month-to-month changes in re
 ## Seasonal Variability by Sector
 
 ```{r}
+#| echo: false
+#| message: false
+#| warning: false
 source(here("src","data","prices_by_sect_cleaning_VA.R"))
 source(here("src","figs", "monthly_price_density_plot_VA.R"))
 ```
@@ -115,6 +141,9 @@ Comparatively, commercial and industrial customers are better buffered against s
 ## Energy Savings by Sector
 
 ```{r}
+#| echo: false
+#| message: false
+#| warning: false
 source(here("src","data","energy_savings_cleaning_VA.R"))
 source(here("src","figs", "energy_savings_plot_VA.R"))
 ```

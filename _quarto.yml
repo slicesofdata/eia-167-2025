@@ -6,8 +6,8 @@ project:
   - about.qmd
   - pages/california_final_page.qmd
   - pages/adamguggenheimfinalEIAUS.qmd
-  - pages/texas_website_final.qmd
-  #pages/SP_page_VA.qmd
+  - pages/Website-final.qmd
+  - pages/SP_page_VA.qmd
 
   #post-render: Rscript cleanup/clean_docs_dir.R
 
@@ -29,10 +29,10 @@ website:
         href: pages/california_final_page.qmd
 
       - text: "Texas"
-        href: pages/texas_website_final.qmd
+        href: pages/Website-final.qmd
 
-      #text: "Virginia"
-        #href: pages/SP_page_VA.qmd
+      - text: "Virginia"
+        href: pages/SP_page_VA.qmd
 
     right:
       - text: "Home"

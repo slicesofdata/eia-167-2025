@@ -1,13 +1,13 @@
 # data cleaning file for "virginia retail energy prices per sector"
 
 #install packages
-install.packages("readr")
+
 library (ggplot2)
 library(dplyr)
 library(here)
 library(readr)
 library(eia)
-install.packages("eia")
+
 eia_set_key("BFUmQVFpwdVZiLBLFI9Ds37dDCzPwvS0TbaQj443")
 
 

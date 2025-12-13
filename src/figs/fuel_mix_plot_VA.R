@@ -9,7 +9,7 @@
 
 ################################################################
 # Load necessary libraries/source any function directories
-install.packages("readr")
+
 library (ggplot2)
 library(dplyr)
 library(here)
@@ -19,7 +19,7 @@ library(eia)
 #read in data
 GEN <- read_rds(here("data", "processed", "fuel_mix_gen_clean_VA.rds"))
 
-View(GEN)
+
 
 #stacked bar plot
 FUEL_MIX <- GEN |>
@@ -38,7 +38,7 @@ FUEL_MIX <- GEN |>
          share = generation / total_gen) |>
   ungroup()
   
-View(FUEL_MIX)
+
 
 # omit WND and ALl (WND too small to be visible in stacked bar plot)
 (fuel_mix_plot <- FUEL_MIX |>

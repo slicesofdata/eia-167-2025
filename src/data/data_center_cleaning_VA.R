@@ -1,7 +1,7 @@
 # data cleaning script for "data center plot"
 
 #install packages
-install.packages("readr")
+
 library (ggplot2)
 library(here)
 library(readr)
@@ -10,7 +10,7 @@ library(lubridate)
 library(stringr)
 library(forcats)
 library(eia)
-install.packages("eia")
+
 eia_set_key("BFUmQVFpwdVZiLBLFI9Ds37dDCzPwvS0TbaQj443")
 
 #import data from API
@@ -27,9 +27,6 @@ RAW_SALES <- eia_data(
 )
 
 
-glimpse(RAW_SALES)
-View(RAW_SALES)
-
 
 #clean data
 CLEAN_SALES <- RAW_SALES |>
@@ -41,7 +38,7 @@ CLEAN_SALES <- RAW_SALES |>
   select(Date, Year, Sales) |>
   mutate(Sales = as.numeric(Sales))
 
-View(CLEAN_SALES)
+
 
 # save data as RDS
 write_rds(CLEAN_SALES, here("data","processed", "industrial_sales_clean_VA.rds"))

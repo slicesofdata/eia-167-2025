@@ -18,7 +18,7 @@ library(dplyr)
 
 #load in data 
 SAVINGS_CLEAN_FINAL <- readRDS(here("data","processed", "energy_savings_clean_VA.rds"))
-View(SAVINGS_CLEAN_FINAL)
+
 
 # plot changes in energy-savings
 (energy_savings_va_plot <- SAVINGS_CLEAN_FINAL |>

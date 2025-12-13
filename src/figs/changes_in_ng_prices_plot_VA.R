@@ -8,14 +8,14 @@
 #
 
 #install packages
-install.packages("readr")
+
 library (ggplot2)
 library(dplyr)
 library(here)
 library(readr)
 library(eia)
 library(gridExtra)
-install.packages("eia")
+
 eia_set_key("BFUmQVFpwdVZiLBLFI9Ds37dDCzPwvS0TbaQj443")
 eia_metadata("natural-gas/pri/sum")
 
@@ -23,8 +23,7 @@ eia_metadata("natural-gas/pri/sum")
 NATURAL_GAS_VA_PRICES_AVG <- read_rds(here("data", "processed", "ng_prices_clean_VA.rds"))
 PRICES <- read_rds(here("data", "processed", "by_sector_clean_VA.rds"))
 
-View(NATURAL_GAS_VA_PRICES_AVG)
-View(PRICES)
+
 
 PRICES <- PRICES |>
   filter(sectorName == "commercial" | sectorName == "residential") |>
@@ -34,12 +33,12 @@ PRICES <- PRICES |>
   mutate(year = as.numeric(year)) |>
   unique()
 
-View(PRICES)
+
 
 PRICES2 <- PRICES |>
   mutate(process = ifelse(sectorName == "commercial", "PCS", "PRS"))
 
-View(PRICES2)
+
 
 #plot 
 (natural_gas_prices_plot <- NATURAL_GAS_VA_PRICES_AVG |> 

@@ -9,7 +9,7 @@
 
 ################################################################
 # Load necessary libraries/source any function directories
-install.packages("readr")
+
 library (ggplot2)
 library(dplyr)
 library(here)
@@ -19,13 +19,11 @@ library(eia)
 #read in data
 SALES <- read_rds(here("data", "processed", "industrial_sales_clean_VA.rds"))
 
-View(SALES)
+
 
 SALES_LAST5 <- CLEAN_SALES |>
   filter(Year >= max(Year) - 4)
 
-View(SALES_LAST5)
-glimpse(SALES_LAST5)
 
 # line plot
 (data_center_plot <- SALES_LAST5 |>

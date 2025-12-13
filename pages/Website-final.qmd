@@ -1,0 +1,71 @@
+---
+title: "Texas"
+format:
+  html:
+    self-contained: true
+editor: visual
+execute:
+  echo: false
+  warning: false
+  error: true
+---
+
+# *Texas Electricity Overview*
+
+Since the early 2000s, Texas has seen steady growth in electricity demand and evolving price and supply dynamics. The deregulated market (largely under Electric Reliability Council of Texas — ERCOT) has fostered competitive retail offerings and increased consumer choice.Residential electricity prices, which were relatively modest in the mid-2000s, gradually rose through the 2010s and into the early 2020s.Meanwhile, generation capacity has shifted significantly: Texas has emerged as a national leader in wind and solar power, while natural-gas and coal generation still play large roles.The state also faced important reliability tests, notably the February 2021 winter storm that led to widespread outages, prompting regulatory and infrastructure reforms. More recently, wholesale prices remain higher than many past years, demand is sharply increasing (especially driven by data-centers, cooling loads and industrial growth), and forecasts indicate these pressures may push up bills or require further investment in grid infrastructure.
+
+```{r}
+library(here)
+library(dplyr)
+library(readr)
+
+# load raw sales data for rendering
+#tx_sales_raw <- readRDS(here::here("src", "data", "tx_sales_raw.Rds"))
+
+#now source the plotting + save function scripts
+#source(here::here("src", "functions", "Save plot png.R"))
+#source(here::here("volatility graph.R"))
+#source(here::here("Policy graph.R"))
+#source(here::here("New Graph.R"))
+
+```
+
+## *Volatility of sector wise electricity consumption in Texas*
+
+```{r}
+#| fig-align: "center"
+#| out-width: "100%"
+
+knitr::include_graphics(
+  here::here("src", "figs", "Volatility graph.png")
+)
+
+```
+
+This visualization shows how electricity consumption in Texas has evolved over time across the commercial, industrial, and residential sectors. While all three sectors display relatively modest fluctuations for most of the period, the recent downward trend especially visible in industrial and residential usage highlights a notable shift in year-over-year demand. The plotted peaks emphasize points of unusually high growth, capturing short-term surges that deviate from historical averages.
+
+## *Texas Electricity Generation Mix changes over time*
+
+```{r}
+#| fig-align: "center"
+#| out-width: "100%"
+
+knitr::include_graphics(
+  here::here("src", "figs", "policy graph.png")
+)
+```
+
+This visualization highlights the shift in Texas electricity generation from coal toward renewable sources over time. Coal production remains relatively stable through the early 2000s, but begins to decline sharply after 2016, coinciding with major retirement of coal units. Meanwhile, renewable generation shows a steady upward trajectory, accelerating notably after the CREZ build-out around 2010, which expanded transmission infrastructure to support wind and solar power. By the late 2010s, renewables surpass coal, signaling a structural transition in Texas’ energy mix driven by policy incentives, technological improvements, and market competitiveness.
+
+## *Texas electricity consumption over time*
+
+```{r}
+#| fig-align: "center"
+#| out-width: "100%"
+
+knitr::include_graphics(
+  here::here("src", "figs", "new graph.png")
+)
+```
+
+This graph shows patterns in Texas’s electricity consumption across residential, commercial, and industrial sectors over time. The overall trend highlights how energy use continues to grow alongside population expansion, industrial activity, and rising digital infrastructure. These patterns point to ongoing **demand-side pressures** as households, businesses, and factories increasingly rely on electricity. The grid must adapt to peak loads, seasonal variability, and emerging technologies. Monitoring these trends helps identify when and where additional generation capacity, efficiency programs, or demand management strategies may be needed to sustain reliability in Texas’s evolving energy landscape

@@ -10,7 +10,7 @@
 
 ################################################################
 # Load necessary libraries/source any function directories
-install.packages("readr")
+
 library (ggplot2)
 library(dplyr)
 library(here)
@@ -20,7 +20,7 @@ library(eia)
 #read in data
 PRICES <- read_rds(here("data", "processed", "monthly_price_density_clean_VA.rds"))
 
-View(PRICES)
+
 
 PRICES <- PRICES |>
   mutate(
