@@ -21,16 +21,13 @@ Besides data center activity, we also observe a couple of key facts that make Vi
 
 -   Virginia demonstrates significant reliance on natural gas – the state’s natural gas consumption is nearly eight times higher than its own production. This makes electricity prices for end consumers sensitive to input fuel price shocks
 
-## Virginia Retail Electricity Prices by Sector
-```{r}
-#| echo: false
-#| message: false
-#| warning: false
+```{r, echo=FALSE, message=FALSE, warning=FALSE}
 library(dplyr)
 library(tidyr)  
 library(ggplot2)
 library(scales)
 library(here)
+
 source(here("src","data","energy_savings_cleaning_VA.R"))
 source(here("src","figs","energy_savings_plot_VA.R"))
 ```
