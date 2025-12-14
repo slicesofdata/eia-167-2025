@@ -3,6 +3,7 @@ title: "Virginia Electricity Overview"
 editor: visual
 execute:
   echo: false
+  cache: false
 ---
 
 # Virginia Electricity Trends
