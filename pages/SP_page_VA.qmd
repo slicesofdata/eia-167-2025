@@ -1,6 +1,8 @@
 ---
 title: "Virginia Electricity Overview"
 editor: visual
+execute:
+  echo: false
 ---
 
 # Virginia Electricity Trends
