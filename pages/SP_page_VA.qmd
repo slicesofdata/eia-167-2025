@@ -47,6 +47,7 @@ We see all sectors becoming more expensive over time due to factors we will expl
 #| echo: false
 #| message: false
 #| warning: false
+#| results: hide
 
 suppressMessages(
   suppressWarnings(
@@ -75,6 +76,7 @@ However, in some periods like between 2010 and 2016, where natural gas prices st
 #| echo: false
 #| message: false
 #| warning: false
+#| results: hide
 
 source(here("src","data","fuel_mix_gen_cleaning_VA.R"))
 source(here("src","figs", "fuel_mix_plot_VA.R"))
@@ -94,6 +96,7 @@ We also see evidence of the VCEA at play. From 2020 onwards, renewables (hydroel
 #| echo: false
 #| message: false
 #| warning: false
+#| results: hide
 
 source(here("src","data","data_center_cleaning_VA.R"))
 source(here("src","figs", "data_center_plot_VA.R"))
@@ -113,6 +116,7 @@ The pink line reflects long-term demand growth primarily driven by data center e
 #| echo: false
 #| message: false
 #| warning: false
+#| results: hide
 
 source(here("src","data","prices_by_sect_cleaning_VA.R"))
 source(here("src","figs", "monthly_price_density_plot_all_sect_VA.R"))
@@ -132,6 +136,7 @@ This plot explains the importance of seasonality on month-to-month changes in re
 #| echo: false
 #| message: false
 #| warning: false
+#| results: hide
 
 source(here("src","data","prices_by_sect_cleaning_VA.R"))
 source(here("src","figs", "monthly_price_density_plot_VA.R"))
@@ -151,6 +156,7 @@ Comparatively, commercial and industrial customers are better buffered against s
 #| echo: false
 #| message: false
 #| warning: false
+#| results: hide
 
 source(here("src","data","energy_savings_cleaning_VA.R"))
 source(here("src","figs", "energy_savings_plot_VA.R"))
