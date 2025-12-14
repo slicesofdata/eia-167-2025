@@ -22,6 +22,9 @@ Besides data center activity, we also observe a couple of key facts that make Vi
 ## Virginia Retail Electricity Prices by Sector
 
 ```{r}
+#| echo: false
+#| message: false
+#| warning: false
 library(dplyr)
 library(tidyr)  
 library(ggplot2)
